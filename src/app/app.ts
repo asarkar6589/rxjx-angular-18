@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RxjxBasics } from './rxjx-basics/rxjx-basics';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RxjxBasics],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
