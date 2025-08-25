@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { from, Observable, of } from 'rxjs';
+import { from, interval, Observable, of, timer } from 'rxjs';
 
 @Component({
   selector: 'app-rxjx-basics',
@@ -29,6 +29,10 @@ export class RxjxBasics {
     this.cityList2$.subscribe((res: string) => {
       console.log(res);
     });
+
+    // this.myInterval$.subscribe((res:number) => {
+    //   console.log(res);
+    // })
   }
 
   // Here we will be making a reactive variable. Let's say one eg of a non reactive variable.
@@ -39,4 +43,10 @@ export class RxjxBasics {
 
   // now here i want to make a variable stateList$. But here i dont want all the data in one go. I want that whatever number of data i have in my variable, that many times my subscribe() function should execute. I want one by one element (just like a for loop)
   cityList2$ = from(["koaa", "pune", "bombay"]); // it will emit the data one by one.
+
+  // Simillar to setTimeout() in JS. It will wait for 2 sec & then execute. It will not stop. It will keep on going.
+  myInterval$ = interval(2000);
+
+  // timer : It will execute only once.
+  myTime$ = timer(5000);
 }
